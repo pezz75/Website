@@ -56,3 +56,41 @@ nav {
 .nav-links ul li:hover::after {
   width: 100%;
 }
+.text-box {
+  width: 90%;
+  color: #fff;                 /* Make text white */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 62px;
+  color: #fff;                 /* Ensure heading is white */
+  margin-bottom: 20px;
+}
+
+.text-box p {
+  margin: 10px 0 40px;
+  font-size: 16px;
+  color: #fff;                 /* Make paragraph text white */
+}
+
+.text-box a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;                 /* Make link text white */
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 13px;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.text-box a:hover {
+  background: #ff4436;         /* Red hover background */
+  border-color: #ff4436;
+}
