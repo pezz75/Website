@@ -2,9 +2,6 @@
    GLOBAL STYLES
    ============================================ */
 
-/* The * selector targets ALL elements on the page.
-   It removes default browser spacing (margin, padding)
-   and sets the main font family. */
 * {
   margin: 0;
   padding: 0;
@@ -15,99 +12,86 @@
    HEADER SECTION
    ============================================ */
 
-/* This creates a full-screen (100vh) banner with a dark overlay
-   using a linear gradient on top of an image background. */
 .header {
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("images/banner.png");
-  background-position: center;  /* Centers the background image */
-  background-size: cover;       /* Ensures image covers the entire area */
+  background-position: center;
+  background-size: cover;
 }
 
 /* ============================================
    NAVIGATION BAR
    ============================================ */
 
-/* The nav container uses flexbox to align logo and menu side-by-side. */
 nav {
   display: flex;
-  padding: 2% 6%;               /* Adds space inside the nav */
+  padding: 2% 6%;
   justify-content: space-between;
   align-items: center;
 }
 
-/* The right-hand side of the nav (menu links). */
 .nav-links {
-  flex: 1;                      /* Takes up available horizontal space */
+  flex: 1;
   text-align: right;
 }
 
-/* Removes bullet points from unordered list items. */
 .nav-links ul {
   list-style: none;
 }
 
-/* Each list item (menu button) is displayed side-by-side. */
 .nav-links ul li {
   display: inline-block;
   padding: 8px 12px;
   position: relative;
 }
 
-/* The actual link text inside the navigation. */
 .nav-links ul li a {
-  color: #ffffff;               /* White text */
-  text-decoration: none;        /* No underlines */
+  color: #ffffff;
+  text-decoration: none;
   font-size: 13px;
 }
 
-/* Creates a red underline that appears on hover. */
 .nav-links ul li::after {
   content: '';
-  width: 0%;                    /* Hidden by default */
+  width: 0%;
   height: 2px;
-  background: #ff4436;          /* Red underline */
+  background: #ff4436;
   display: block;
   margin-top: 5px;
-  transition: 0.5s;             /* Smooth animation */
+  transition: 0.5s;
 }
 
-/* Expands the underline when hovered. */
 .nav-links ul li:hover::after {
   width: 100%;
 }
 
 /* ============================================
-   HERO TEXT BOX (CENTERED TEXT IN HEADER)
+   HERO TEXT BOX
    ============================================ */
 
-/* Positions text box in the middle of the banner image. */
 .text-box {
   width: 90%;
   color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers horizontally and vertically */
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
-/* Main heading text. */
 .text-box h1 {
   font-size: 62px;
   color: #fff;
   margin-bottom: 20px;
 }
 
-/* Paragraph text under heading. */
 .text-box p {
   margin: 10px 0 40px;
   font-size: 16px;
   color: #fff;
 }
 
-/* Button-style link. */
 .text-box a {
   display: inline-block;
   text-decoration: none;
@@ -120,101 +104,206 @@ nav {
   transition: 0.3s;
 }
 
-/* Changes background and border color when hovered. */
 .text-box a:hover {
-  background: #ff4436;         /* Red background on hover */
+  background: #ff4436;
   border-color: #ff4436;
 }
 
 /* ============================================
-   RESPONSIVE DESIGN (MEDIA QUERIES)
+   RESPONSIVE DESIGN
    ============================================ */
 
-/* When screen width is 700px or less — smaller devices */
 @media (max-width: 700px) {
   .text-box h1 {
-    font-size: 3em;             /* Smaller heading size */
+    font-size: 3em;
   }
-}
 
-/* Stack menu items vertically on small screens */
-@media (max-width: 700px) {
   .nav-links ul li {
     display: block;
   }
-}
 
-/* Turns the nav menu into a sidebar for mobile view */
-@media (max-width: 700px) {
   .nav-links {
     position: absolute;
-    background: #2c3e50;        /* Dark blue-gray menu background */
+    background: #ff0000;
     height: 100vh;
     width: 200px;
     top: 0;
-    right: -200px;              /* Hidden off-screen by default */
+    right: -200px;
     text-align: left;
     z-index: 2;
-    transition: right 0.3s ease; /* Smooth slide-in transition */
+    transition: right 0.3s ease;
   }
 
-  /* This should style the hamburger icon (menu toggle) */
   nav .fa {
     display: block;
     color: #fff;
     cursor: pointer;
   }
+}
 
-  .course{
-    width: 80%;
-    margin: auto;   
-    text-align: center;
-    padding: top 100px;
-  }
-  h1{
+/* ============================================
+   COURSE SECTION
+   ============================================ */
+
+.course {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.course h1 {
   font-size: 36px;
-  font-weight: ;
-  }
-  p{
-    color: #2c3e50;
-    font-size: 18px;
-    font: weight 300px ;
-    line-height: 22px;
-    padding: 10px;
-  }
-.row{
+  font-weight: 600;
+}
+
+.course p {
+  color: #777;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+
+.row {
+  margin-top: 5%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin: auto;
-} 
+}
 
-.course-col{
-
+.course-col {
   flex-basis: 30%;
   background: #fff3f3;
-  margin-bottom: 30px;
-  padding: 20px 15px  ;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
-h3{
-  font-size: 23px;
+
+.course-col h3 {
+  text-align: center;
+  font-weight: 600;
   margin: 10px 0;
-  font-weight: 600;}
+}
 
-  .course-col :hover{
-    box-shadow: 0 0 25px rgba(0,0,0,0.2);
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+.course-col:hover {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+}
 
-    @media(max-width: 700px){
-      .row{
-        flex-direction: column; 
-      }
-    }  
-    .campus{
-      padding: 70px 0;
-      text-align: center;
-    }
-  } 
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* ============================================
+   CAMPUS SECTION
+   ============================================ */
+
+.campus {
+  padding: 70px 0;
+  text-align: center;
+  padding: 10px;
+}
+
+.campus-col {
+  flex-basis: 30%;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.campus-col img {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(226, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.campus-col:hover img {
+  transform: scale(1.2);
+}
+
+.campus-col:hover .layer {
+  opacity: 1;
+}
+
+.layer h3 {
+  width: 100%;
+  font-weight: 500;
+  color: #fff;
+  font-size: 26px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.layer:hover h3 {
+  bottom: 49%;
+  opacity: 1;
+}
+
+/* ============================================
+   FACILITIES SECTION
+   ============================================ */
+
+.facilities {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.facilities-col {
+  flex-basis: 31%;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  text-align: left;
+}
+
+.facilities-col img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.facilities-col h3 {
+  margin-top: 16px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* ============================================
+   CALL TO ACTION (CTA)
+   ============================================ */
+
+.cta {
+  margin: 100px auto;
+  width: 80%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/banner.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  text-align: center;
+  padding: 100px;
+}
+
+.cta h1 {
+  color: #fff;
+  margin-bottom: 40px;
+  padding: 0;
+}
